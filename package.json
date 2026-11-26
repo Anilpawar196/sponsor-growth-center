@@ -1,0 +1,8 @@
+{
+  "name": "sponsor-growth-center",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sponsor Growth Center: analytics dashboard, campaign/task management and Gemini AI analyst",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

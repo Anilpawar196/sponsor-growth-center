@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sponsor Growth Center · CampusFest</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◆</span> Sponsor Growth Center <span class="sub" id="eventName">CampusFest</span></div>
+  <nav id="tabs">
+    <button data-tab="overview" class="active">Overview</button>
+    <button data-tab="campaigns">Campaigns</button>
+    <button data-tab="pipeline">Pipeline</button>
+    <button data-tab="playbook">Replay &amp; 2026 plan</button>
+    <button data-tab="tasks">Tasks <span class="badge" id="taskBadge"></span></button>
+    <button data-tab="data">Data &amp; settings</button>
+  </nav>
+  <div class="asof">
+    <label>As of <input type="date" id="asOf"></label>
+    <button class="ghost small" id="btnEventDay" title="Jump to the festival day">Event day</button>
+    <button class="ghost small" id="btnLatest" title="Jump to the last date covered by the data">Latest</button>
+    <button class="primary" id="btnChat">✦ AI Analyst</button>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<aside id="chat" class="chat hidden">
+  <div class="chat-head">
+    <div><b>✦ AI Growth Analyst</b><div class="muted tiny" id="chatAsOf"></div></div>
+    <div><button class="ghost small" id="chatReset" title="Start a new conversation">New chat</button><button class="ghost small" id="chatClose">✕</button></div>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggest" id="chatSuggest"></div>
+  <form class="chat-input" id="chatForm">
+    <textarea id="chatText" rows="2" placeholder="Ask about sponsors, campaigns, pipeline, targets…"></textarea>
+    <button class="primary" type="submit" id="chatSend">Send</button>
+  </form>
+</aside>
+
+<div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+<div id="toast" class="toast hidden"></div>
+
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
