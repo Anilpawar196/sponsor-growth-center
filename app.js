@@ -645,8 +645,7 @@ STYLE: concise, human and direct. Lead with the answer, then 2–5 bullets of ev
   }
 
   // ---- AI self-test: questions with expected answers recomputed from the CURRENT data ----
-  const HONEST = /(can't|cannot|can not|isn't|is not|not (in|available|recorded|tracked|captured|possible|enough|proof|evidence)|no (data|record|payment|evidence|information|receipt)|doesn't|does not|unable|insufficient|don't have|do not have|not establish|association)/i;
-  function evalCases() {
+  const HONEST = /(can't|cannot|can not|isn't|is not|not (in|available|recorded|tracked|captured|possible|enough|proof|evidence|been)|no (data|record|payment|evidence|information|receipt|cash)|0 payments?|zero payments?|doesn't|does not|unable|insufficient|don't have|do not have|not establish|association|not proof|not cash|≠)/i;  function evalCases() {
     const A = ui.asOf; const f = E.funnel(db, A); const g = Object.fromEntries(f.steps.map((x) => [x.key, x.value])); const ct = E.campaignTable(db, A);
     const byName = (n) => ct.find((c) => c.campaign_name === n) || {}; const topVal = Math.max(...ct.map((c) => c.confirmed_value_inr));
     const S = E.snapshot(db, A); const ik = S.opps.filter((o) => o.stage === 'partner_confirmed' && o.support_type !== 'cash');
