@@ -1,8 +1,8 @@
 // Vercel serverless function: proxies the Growth Center chat to Google Gemini.
 // The browser runs every tool (data query / calculation) against its live data; this
 // function only relays model turns, so the API key never reaches the browser.
-const DEFAULT_MODELS = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-2.5-flash'];
-const PER_CALL_MS = 54000;   // give the main model almost the whole budget
+const DEFAULT_MODELS = ['gemini-4-hydrogen', 'gemini-flash-lite-latest', 'gemini-3.5-flash'];
+const PER_CALL_MS = 25000;   // per model; leaves time for the fallback model
 const TOTAL_MS = 57000;      // stay under the 60 s function limit
 
 function thinkingFor(model) {
